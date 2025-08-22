@@ -1,0 +1,42 @@
+class User {
+    String name;
+    int age;
+
+    User(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Overriding toString()
+    @Override
+    public String toString() {
+        return "User[name=" + name + ", age=" + age + "]";
+    }
+}
+
+class Course {
+    String title;
+    int duration; // in hours
+
+    Course(String title, int duration) {
+        this.title = title;
+        this.duration = duration;
+    }
+
+    // Overriding toString()
+    @Override
+    public String toString() {
+        return "Course[title=" + title + ", duration=" + duration + " hrs]";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        User u1 = new User("Nikhil", 21);
+        Course c1 = new Course("Java Programming", 40);
+
+        // Printing objects directly calls toString()
+        System.out.println(u1);
+        System.out.println(c1);
+    }
+}
