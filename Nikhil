@@ -1,0 +1,30 @@
+package hello;
+
+public class MyJava {
+    public static void main(String[] args) {
+        System.out.println("Nikhil");
+        System.out.println("2117240070218");
+
+        EventDispatcher dispatcher = new EventDispatcher();
+        dispatcher.dispatch("Hello from event dispatcher!");
+    }
+
+    static class EventDispatcher {
+        void dispatch(String message) {
+            Event event = new Event(message);
+            event.trigger();
+        }
+
+        class Event {
+            String message;
+
+            Event(String message) {
+                this.message = message;
+            }
+
+            void trigger() {
+                System.out.println("Event Triggered: " + message);
+            }
+        }
+    }
+}
